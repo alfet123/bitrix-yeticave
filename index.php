@@ -2,6 +2,9 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
 $APPLICATION->SetTitle("Главная");
+use Bitrix\Main\Page\Asset;
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/normalize.min.css");
+Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/styles.css");
 ?>
   <main class="container">
     <section class="promo">
