@@ -1,3 +1,8 @@
+<?
+require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("NOT_SHOW_NAV_CHAIN", "Y");
+$APPLICATION->SetTitle("Главная");
+?>
   <main class="container">
     <section class="promo">
       <h2 class="promo__title">Нужен стафф для катки?</h2>
@@ -30,7 +35,7 @@
       <ul class="lots__list">
         <li class="lots__item lot">
           <div class="lot__image">
-            <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
+            <img src="<?=SITE_TEMPLATE_PATH;?>/images/lot-1.jpg" width="350" height="260" alt="Сноуборд">
           </div>
           <div class="lot__info">
             <span class="lot__category">Доски и лыжи</span>
@@ -48,7 +53,7 @@
         </li>
         <li class="lots__item lot">
           <div class="lot__image">
-            <img src="img/lot-2.jpg" width="350" height="260" alt="Сноуборд">
+            <img src="<?=SITE_TEMPLATE_PATH;?>/images/lot-2.jpg" width="350" height="260" alt="Сноуборд">
           </div>
           <div class="lot__info">
             <span class="lot__category">Доски и лыжи</span>
@@ -66,7 +71,7 @@
         </li>
         <li class="lots__item lot">
           <div class="lot__image">
-            <img src="img/lot-3.jpg" width="350" height="260" alt="Крепления">
+            <img src="<?=SITE_TEMPLATE_PATH;?>/images/lot-3.jpg" width="350" height="260" alt="Крепления">
           </div>
           <div class="lot__info">
             <span class="lot__category">Крепления</span>
@@ -84,7 +89,7 @@
         </li>
         <li class="lots__item lot">
           <div class="lot__image">
-            <img src="img/lot-4.jpg" width="350" height="260" alt="Ботинки">
+            <img src="<?=SITE_TEMPLATE_PATH;?>/images/lot-4.jpg" width="350" height="260" alt="Ботинки">
           </div>
           <div class="lot__info">
             <span class="lot__category">Ботинки</span>
@@ -102,7 +107,7 @@
         </li>
         <li class="lots__item lot">
           <div class="lot__image">
-            <img src="img/lot-5.jpg" width="350" height="260" alt="Куртка">
+            <img src="<?=SITE_TEMPLATE_PATH;?>/images/lot-5.jpg" width="350" height="260" alt="Куртка">
           </div>
           <div class="lot__info">
             <span class="lot__category">Одежда</span>
@@ -120,7 +125,7 @@
         </li>
         <li class="lots__item lot">
           <div class="lot__image">
-            <img src="img/lot-6.jpg" width="350" height="260" alt="Маска">
+            <img src="<?=SITE_TEMPLATE_PATH;?>/images/lot-6.jpg" width="350" height="260" alt="Маска">
           </div>
           <div class="lot__info">
             <span class="lot__category">Разное</span>
@@ -139,3 +144,4 @@
       </ul>
     </section>
   </main>
+<?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
