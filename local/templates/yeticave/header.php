@@ -7,6 +7,12 @@
 </head>
 <body>
 
+<?
+  use Bitrix\Main\Page\Asset;
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/normalize.min.css");
+  Asset::getInstance()->addCss(SITE_TEMPLATE_PATH."/styles.css");
+?>
+
 <div class="page-wrapper">
 
   <header class="main-header">
