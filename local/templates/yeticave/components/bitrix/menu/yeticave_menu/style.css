@@ -1,0 +1,38 @@
+.nav__list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.nav__item a {
+  position: relative;
+  display: block;
+  padding: 12px 10px;
+  font-weight: 700;
+  color: #45abde;
+}
+
+.nav__item a::before {
+  content: "";
+  display: none;
+  position: absolute;
+  bottom: 0;
+  width: calc(100% - 20px);
+  height: 3px;
+  background-color: #e2e5e6;
+}
+
+.nav__item a:hover::before {
+  display: block;
+}
+
+.nav__item a:active {
+  color: #2590c6;
+}

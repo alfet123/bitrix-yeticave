@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title><?$APPLICATION->ShowTitle();?></title>
-  <?$APPLICATION->ShowCSS();?>
+  <?$APPLICATION->ShowHead();?>
 </head>
 <body>
+
+<?$APPLICATION->ShowPanel();?>
 
 <?
   use Bitrix\Main\Page\Asset;
@@ -17,24 +19,46 @@
 
   <header class="main-header">
     <div class="main-header__container container">
+
       <h1 class="visually-hidden">YetiCave</h1>
       <a class="main-header__logo">
         <img src="<?=SITE_TEMPLATE_PATH;?>/images/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
       </a>
-      <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
-        <input type="search" name="search" placeholder="Поиск лота">
-        <input class="main-header__search-btn" type="submit" name="find" value="Найти">
-      </form>
-      <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
+
+<?$APPLICATION->IncludeComponent(
+	"bitrix:search.form",
+	"yeticave_search",
+	Array(
+		"COMPONENT_TEMPLATE" => "yeticave_search",
+		"PAGE" => "https://echo.htmlacademy.ru",	// Страница выдачи результатов поиска (доступен макрос #SITE_DIR#)
+	),
+	false
+);?>
+
+<?$APPLICATION->IncludeFile(
+	SITE_TEMPLATE_PATH."/button_inc.php",
+	Array(),
+	Array()
+);?>
+
       <nav class="user-menu">
-        <div class="user-menu__image">
-          <img src="<?=SITE_TEMPLATE_PATH;?>/images/user.jpg" width="40" height="40" alt="Пользователь">
-        </div>
-        <div class="user-menu__logged">
-          <p>Константин</p>
-          <a href="login.html">Выйти</a>
-        </div>
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.user.link", 
+	"yeticave_user", 
+	array(
+		"COMPONENT_TEMPLATE" => "yeticave_user",
+		"ID" => "1",
+		"NAME_TEMPLATE" => "#NAME#",
+		"SHOW_LOGIN" => "Y",
+		"USE_THUMBNAIL_LIST" => "Y",
+		"CACHE_TYPE" => "N",
+		"CACHE_TIME" => "7200",
+		"THUMBNAIL_LIST_SIZE" => "30"
+	),
+	false
+);?>
       </nav>
+
     </div>
   </header>
 
