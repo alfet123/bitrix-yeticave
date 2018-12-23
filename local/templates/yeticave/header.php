@@ -21,9 +21,12 @@
     <div class="main-header__container container">
 
       <h1 class="visually-hidden">YetiCave</h1>
-      <a class="main-header__logo">
-        <img src="<?=SITE_TEMPLATE_PATH;?>/images/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
-      </a>
+
+<?$APPLICATION->IncludeFile(
+	SITE_TEMPLATE_PATH."/logo_inc.php",
+	Array(),
+	Array()
+);?>
 
 <?$APPLICATION->IncludeComponent(
 	"bitrix:search.form",
