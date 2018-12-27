@@ -51,13 +51,13 @@ function getTimerString($dateTimeString)
 
 <?if (!empty($arResult)):?>
 	<ul class="lots__list">
-	<?foreach($arResult['ITEMS'] as $arItem):?>
+	<?foreach($arResult[ITEMS] as $arItem):?>
 		<li class="lots__item lot">
 			<div class="lot__image">
 				<img src="<?=$arItem[DETAIL_PICTURE][SRC]?>" width="350" height="260" alt="<?=$arItem[DETAIL_PICTURE][ALT]?>">
 			</div>
 			<div class="lot__info">
-				<span class="lot__category">Категория</span>
+				<span class="lot__category"><?=$arItem[CATEGORY]?></span>
 				<h3 class="lot__title"><a class="text-link" href="lot.html"><?=$arItem[NAME]?></a></h3>
 				<div class="lot__state">
 					<div class="lot__rate">
